@@ -1,0 +1,24 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "Lab2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Skrypchuk",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1"
+  },
+  "dependencies": {
+    "datatable": "^0.0.6",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "pug": "^3.0.2"
+  }
+}
