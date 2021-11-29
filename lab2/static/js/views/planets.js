@@ -55,9 +55,29 @@ function initDeletingItem () {
   })
 }
 
+function initUpdatingItem () {
+  const button = window.document.querySelector('#planet-update')
+  button.addEventListener('click', function (e) {
+    e.preventDefault()
+    let id = prompt('Enter element`s id to update: ')
+    if (id.match(/^[a-z]+$/i) || Number(id) > planetModel.Select().length) {
+      alert('Type correct data!')
+    }
+    else {
+      let load = prompt('Enter new load capacity: ')
+      let weight = prompt('Enter new weight: ')
+      let row = {
+        'load capacity':load,
+        'weight':weight
+      }
+      planetModel.Update(Number(id), row)
+    }
+  })
+}
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
   initLists()
   initListEvents()
   initDeletingItem()
+  initUpdatingItem()
 })

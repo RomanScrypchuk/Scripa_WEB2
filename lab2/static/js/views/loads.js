@@ -55,10 +55,26 @@ function initDeletingItem () {
   })
 }
 
+function initUpdatingItem () {
+  const button = window.document.querySelector('#load-update')
+  button.addEventListener('click', function (e) {
+    e.preventDefault()
+    let id = prompt('Enter element`s id to update: ')
+    if (id.match(/^[a-z]+$/i) || Number(id) > loadModel.Select().length) {
+      alert('Type correct data!')
+    }
+    else {
+      let name = prompt('Enter new name: ')
+      let weight = prompt('Enter new weight: ')
+      loadModel.Update(Number(id), {name, weight})
+    }
+  })
+}
 window.addEventListener('DOMContentLoaded', e => {
   initAddForm()
   initLists()
   initListEvents()
   initDeletingItem()
+  initUpdatingItem()
 })
 

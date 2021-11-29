@@ -77,4 +77,19 @@ class BaseModel {// eslint-disable-line no-unused-vars
     const event = new CustomEvent(`${this.collectionName}ListDataChanged`, { detail: collection })
     document.dispatchEvent(event)
   }
+  Update(id, row) {
+    const collection = this.Select()
+    const entry = collection[id - 1]
+    for (const key in row) {
+      if (entry.hasOwnProperty(key) &&
+          entry.key !== 'id') {
+        entry[key] = row[key]
+      }
+    }
+    collection[id - 1] = entry
+    this.Commit(collection)
+
+    const event = new CustomEvent(`${this.collectionName}ListDataChanged`, { detail: collection })
+    document.dispatchEvent(event)
+  }
 }
