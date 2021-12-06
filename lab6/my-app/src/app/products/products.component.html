@@ -1,4 +1,4 @@
-<div> 
+<div class="product-add-card">
     <h1 style="margin: 20px;">Add product</h1>
     <div class="form-group">
         <label>Name</label>
@@ -8,28 +8,25 @@
         <label>Price</label>
         <input type="number" class="form-control" name="price" [(ngModel)]="price" />
     </div>
-   
     <div class="form-group">
-        <button class="btn btn-default" (click)="addProduct()">Add</button>
+        <button class="btn btn-success" (click)="addProduct()">Add</button>
     </div>
 </div>
 <div >
-<h1>Products list</h1>
-<section class="product-list">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th></th>
-          </tr>
-        </table>    
-    <app-product *ngFor='let item of products'
-    
-    [product]='item'
+<h1 style="text-align: center">Products list</h1>
+    <section class="product-list">
+         <table class="table">
+            <tr class="row">
+                <th class="col">Name</th>
+                <th class="col">Price</th>
+                 <th class="col"></th>
+            </tr>
+            <app-product *ngFor='let item of products'
 
-    (eventProduct)='loadProducts()'>
-    </app-product>
+                         [product]='item'
 
-       
-   </section>
+                         (eventProduct)='loadProducts()'>
+            </app-product>
+        </table>
+    </section>
 </div>

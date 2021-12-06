@@ -44,5 +44,5 @@ app.get('/',function(req,res){
  res.sendFile(__dirname+'/dist/my-app/index.html');
 })
 
-app.listen(process.env.PORT||8081);
+app.listen(process.env.PORT||8080);
 console.log('server is run!');

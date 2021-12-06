@@ -20,7 +20,7 @@ window.onload = async () =>{
     socket.on("chat message", function (data) {
         console.log(me);
         if(me.toString().localeCompare(data.user.toString()) == 0)
-			messageBox.innerHTML += `<p class="my-chat-bubble" align="right">${data.data.toString()}</p>`
+			messageBox.innerHTML += `<p class="my-chat-bubble">${data.data.toString()}</p>`
 		else  
 			messageBox.innerHTML += `<p class="chat-bubble" >${data.user}: ${data.data.toString()}</p>`
     })

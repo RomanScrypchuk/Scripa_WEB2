@@ -91,5 +91,5 @@ io.on('connection', function (socket) {
 	socket.emit('joinuser', user)
 });
 
-server.listen(8082);
+server.listen(3001);
 console.log('Run server!');

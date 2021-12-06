@@ -4,3 +4,12 @@ app-header{
     padding:10px 20px;
     display:flex;
    }
+
+app-products {
+    width: 35%;
+    margin-left: 30%;
+}
+
+.row {
+    flex-wrap: nowrap!important;
+}
